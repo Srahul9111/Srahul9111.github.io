@@ -1,35 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,user-scalable=no" />
-
-    <title>BubbleShooter</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/game.css" />
-  </head>
-  <body>
-    <div id="page">
-      <div id="topbar">
-        <h1 id="score"></h1>
-        <h1 id="timer"></h1>
-      </div>
-      <!--        <canvas id="game"></canvas>-->
-      <div id="game">
-        <div id="board"></div>
-      </div>
-      <div id="footer"></div>
+<!doctype html>
+<html land="en-US">
+<head>
+  <meta charset="utf8">
+  <title>Bubble Shooter</title>
+  <link href="_css/main.css" rel="stylesheet">
+  <link href="_css/game.css" rel="stylesheet">
+  <script src="_js/modernizr.js"></script>
+  <script>
+    Modernizr.load([{
+      load: "//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js",
+      complete: function() {
+        if(!window.jQuery){
+          Modernizr.load("_js/jquery-2.1.3.min.js");
+        }
+      }
+    },
+    "_js/ui.js",
+    "_js/bubble.js",
+    "_js/board.js",
+    "_js/collision_detector.js",
+    {
+      load: "_js/game.js",
+      complete: function(){
+        $(function(){
+          var game = new BubbleShoot.Game();
+          game.init();
+        })
+      }
+    }
+    ]);
+  </script>
+</head>
+<body>
+  <div id="page">
+    <div id="top_bar"></div>
+    <div id="game">
+      <div id="board"></div>
+      <div id="bubbles_remaining"></div>
     </div>
-
-    <div id="start_game_dialog" class="dialog">
-      <h2>Start a new Game</h2>
-      <div id="new_game_button" class="button">New Game</div>
+    <div id="footer_bar"></div>
+    <div id="start_game" class="dialog">
+      <div id="start_game_message">
+        <h2>Start a new game</h2>
+      </div>
+      <div class="but_start_game button">
+        New Game
+      </div>
     </div>
-
-    <!-- <div id="finish_game"  class="finish">
-            <h2>Game Over</h2>
-        </div> -->
-
-    <script src="dist/app.js"></script>
-  </body>
+  </div>
+</body>
 </html>

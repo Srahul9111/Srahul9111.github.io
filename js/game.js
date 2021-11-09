@@ -25,7 +25,7 @@ function startGame () {
     // set the first next bubble
     UI.prepareNextBubble();
     UI.resize();
-    UI.drawBoard();
+//    UI.drawBoard();
     
     
     // add event listner for mouse clicks on the board
@@ -61,11 +61,9 @@ function ballFiredHandler(event) {
     UI.board.appendChild(newBubble.dom);
     // randomly change the type to get a new bubble with a new color
     UI.currentBubble.changeType();
-   
     
     // if collision occurs change distance and duration.
     if (collisionHappened) {
-        
         animationDuration = animationDuration * collisionHappened.distanceToCollision / distance;
         distance = collisionHappened.distanceToCollision;
         // update the board state with the position of the new bubble. also update the col and row of the bubble object itself
@@ -85,7 +83,7 @@ function ballFiredHandler(event) {
 //                UI.drawBoard();
                 // check for winning the game
                 if (Board.totalNumberOfBubbles == 0) {
-                    UI.init();
+                    // use setTimeput to show a box that you won the game
                     setTimeout(() => alert("you won the game!"), 400);
                     UI.gameBoard.removeEventListener("touchstart", ballFiredHandler);
                     UI.gameBoard.removeEventListener("click", ballFiredHandler);

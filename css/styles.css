@@ -69,19 +69,6 @@ h1 {
     transition: opacity 1s;
 }
 
-.dialog1 {
-    height: 40%;
-    width: 40%;
-    background-color: #369;
-    position: absolute;
-    left: 30%;
-    top: 30%;
-    text-align: center;
-    
-    opacity: 1;
-    transition: opacity 1s;
-}
-
 .dialog h2 {
     color: black;;
     font-size: 5vmin;

@@ -563,9 +563,7 @@ function ballFiredHandler(event) {
                     // check for winning the game
                     if (Board.totalNumberOfBubbles == 0) {
                         // use setTimeput to show a box that you won the game
-                        setTimeout(function () {
-                            return alert("you won the game!");
-                        }, 400);
+                        window.location.href = "./index.html";
                         UI.gameBoard.removeEventListener("touchstart", ballFiredHandler);
                         UI.gameBoard.removeEventListener("click", ballFiredHandler);
 
@@ -575,7 +573,7 @@ function ballFiredHandler(event) {
                         Board.updateTotalNumberOfBubbles(1);
 
                         if (Board.NUM_ROW >= Board.numberOfAllowedRows) {
-                            alert("game over!");
+                            window.location.href = "./index.html";
                             UI.gameBoard.removeEventListener("touchstart", ballFiredHandler);
                             UI.gameBoard.removeEventListener("click", ballFiredHandler);
                         }

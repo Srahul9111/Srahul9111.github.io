@@ -64,9 +64,9 @@ h1 {
 .dialog {
   position: absolute;
   left: 30%;
-  top: 45%;
+  top: 40%;
   text-align: center;
-
+  
   opacity: 1;
   transition: opacity 1s;
 }
@@ -83,7 +83,7 @@ h1 {
   padding-bottom: 4%;
   border-radius: 15px;
   background-color: #369;   
-  font-size: 6vmin;
+  font-size: 8vmin;
   text-shadow: 0px 1px 1px #f99;
   color: #fff;
 }
